@@ -32,8 +32,8 @@ public class Polynomial {
                 else {
                     coefficient = Double.parseDouble(parts[0]);
                 }
-                if (parts.length > 1 && !parts[1].isEmpty() && parts[1].startsWith("^")) {
-                    power = Integer.parseInt(parts[1].substring(1));
+                if (parts.length > 1 && !parts[1].isEmpty()) {
+                    power = Integer.parseInt(parts[1].trim());
                 }
                 else {
                     power = 1;
@@ -139,7 +139,7 @@ public class Polynomial {
             } else if (exponent == 1) {
                 newpoly.append(coefficient == 1 ? "x" : coefficient == -1 ? "-x" : coefficient + "x");
             } else {
-                newpoly.append(coefficient == 1 ? "x^" + exponent : coefficient == -1 ? "-x^" + exponent : coefficient + "x^" + exponent);
+                newpoly.append(coefficient == 1 ? "x" + exponent : coefficient == -1 ? "-x" + exponent : coefficient + "x" + exponent);
             }
         }
 
